@@ -46,9 +46,9 @@ export const FoodTile: React.FC<Props> = (props: Props) => {
         <span className={classes.name}>{name}</span>
 
         <div className={classes.controls}>
-          <span className={classes.button} onClick={handleChange(value - 1)}>
+          <button className={classes.button} onClick={handleChange(value - 1)}>
             -
-          </span>
+          </button>
           {/* <span className={classes.value}>{value || 0}</span> */}
           <input
             value={value}
@@ -56,9 +56,9 @@ export const FoodTile: React.FC<Props> = (props: Props) => {
             type="number"
             className={classes.input}
           />
-          <span className={classes.button} onClick={handleChange(value + 1)}>
+          <button className={classes.button} onClick={handleChange(value + 1)}>
             +
-          </span>
+          </button>
         </div>
       </div>
     </div>
@@ -90,7 +90,11 @@ const styles = (theme: CustomTheme): Record<ClassNames, CSSProperties> => ({
     }
   },
   button: {
-    color: "grey"
+    color: "grey",
+    padding: "2px 2px 2px 2px",
+    border: "1px solid black",
+    borderRadius: "2px",
+    backgroundColor: "red",
   },
   image: {
     height: 100
