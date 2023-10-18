@@ -28,7 +28,8 @@ type ClassNames =
   | "itemContainer"
   | "buttonContainer"
   | "lateralBar"
-  | "barSpacer";
+  | "barSpacer"
+  | "alertContainer";
 interface OwnProps {
   classes: Record<ClassNames, string>;
 }
@@ -81,6 +82,9 @@ export const CalculatorPage: React.FC<Props> = (props: Props) => {
             <Button variant="contained" onClick={sendData(result)}>
               {result} Kcal
             </Button>
+            {
+              result > 1000 && <div className={classes.alertContainer} >Trop manzé</div>
+            }
           </div>
         </div>
         <div className={classes.lateralBar}>
@@ -196,6 +200,11 @@ const styles = (theme: CustomTheme): Record<ClassNames, CSSProperties> => ({
     border: "1px solid black",
     margin: 10,
   },
+  alertContainer: {
+    backgroundColor: "red",
+    borderRadius: "2px",
+    textAlign: "center",
+  }
 });
 
 export default withStyles(styles)(CalculatorPage);
