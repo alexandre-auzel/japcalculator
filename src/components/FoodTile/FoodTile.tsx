@@ -94,6 +94,7 @@ const styles = (theme: CustomTheme): Record<ClassNames, CSSProperties> => ({
     padding: "2px 2px 2px 2px",
     border: "1px solid black",
     borderRadius: "2px",
+    backgroundColor: "red",
   },
   image: {
     height: 100
